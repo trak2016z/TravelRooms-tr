@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konto użytkownika</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="dependencies/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<div>
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <a class="navbar-brand" href="#page-top">Konto Użytkownika</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="homePage.html" onclick="loginOut()"><span class="glyphicon glyphicon-log-in"></span>
+                        Wyloguj</a></li>
+                    <li><a href="userPanel.html" onclick="userPanel()"><span
+                            class="glyphicon glyphicon-user"></span><span
+                            id="userAccount"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<section>
+    <div class="container">
+        <form role="form">
+
+            <div class="form-group">
+
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#user-tab" aria-controls="user-tab" role="tab"
+                                                              data-toggle="tab">Dane użytkownika</a>
+                    </li>
+                    <li role="presentation"><a href="#edit-tab" aria-controls="edit-tab" role="tab"
+                                               data-toggle="tab">Edytuj dane</a></li>
+
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane active" id="user-tab">
+                    <div>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <td>Imię:</td>
+                                <td id="imie"></td>
+                            </tr>
+                            <tr>
+                                <td>Nazwisko:</td>
+                                <td id="nazwisko"></td>
+                            </tr>
+                            <tr>
+                                <td>Numer Telefonu:</td>
+                                <td id="numer_tel"></td>
+                            </tr>
+                            <tr>
+                                <td>Ulica:</td>
+                                <td id="ulica"></td>
+                            </tr>
+                            <tr>
+                                <td>Numer domu:</td>
+                                <td id="numer_dom"></td>
+                            </tr>
+                            <tr>
+                                <td>Miasto:</td>
+                                <td id="miasto"></td>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+
+
+            <div class="tab-pane" id="edit-tab">
+                <div>
+                    <div>
+                        <input class="form-control" id="name" type="text" placeholder="Imię"/>
+                        <input class="form-control" id="surname" type="text" placeholder="Nazwisko"/>
+                        <input class="form-control" id="telephone" type="text" placeholder="Numer telefonu"/>
+                        <input class="form-control" id="street" type="text" placeholder="Ulica"/>
+                        <input class="form-control" id="numberHome" type="text" placeholder="Numer Domu"/>
+                        <input class="form-control" id="city" type="text" placeholder="Miasto"/>
+
+
+                    </div>
+
+                    <div class="container">
+                        <button type="button" class="btn btn-default" id="button" name="button"
+                                onclick="saveUserData()">
+                            Zapisz
+                        </button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Stopka -->
+<footer class="text-center">
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; Joanna Szczęch, Pavlo Liulia 2016
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" src="js/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script type="text/javascript" src="dependencies/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/initializeFirebase.js"></script>
+<script type="text/javascript" src="js/register.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/authorizer.js"></script>
+<script type="text/javascript" src="js/travels.js"></script>
+<script type="text/javascript" src="js/userPanel.js"></script>
+</body>
+</html>

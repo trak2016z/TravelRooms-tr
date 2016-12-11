@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="dependencies/bootstrap/css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+
+    <title>Title</title>
+</head>
+<body>
+
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand" href="#page-top">Opinie o noclegu</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="homePage.html" onclick="loginOut()"><span class="glyphicon glyphicon-log-in"></span>
+                    Wyloguj</a></li>
+                <li><a href="userPanel.html"><span class="glyphicon glyphicon-user"></span><span
+                        id="userAccount"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section>
+    <div class="container">
+        <form role="form">
+            <div class="form-group">
+                <label for="country">Miasto:</label>
+                <select class="form-control" id="country">
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <div class="form-group">
+            <label for="opinion">Name:</label>
+            <textarea class="form-control" rows="5" id="opinion" placeholder="Opinia..."
+                      style="resize: none"></textarea>
+        </div>
+    </div>
+    <div class="container">
+        <button type="button" class="btn btn-default" id="button" name="button" onclick="saveToCountry()">Dodaj</button>
+    </div>
+</section>
+<!-- Stopka -->
+<footer class="text-center">
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; Joanna Szczęch, Pavlo Liulia 2016
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_fXolbFIyRtphkqinzTUnauN0ow_pGOA"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script type="text/javascript" src="dependencies/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script type="text/javascript" src="js/initializeFirebase.js"></script>
+<script type="text/javascript" src="js/register.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/authorizer.js"></script>
+<script type="text/javascript" src="js/countryOpinion.js"></script>
+
+</body>
+</html>

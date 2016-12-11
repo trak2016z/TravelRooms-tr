@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="dependencies/bootstrap/css/bootstrap.min.css">
+    <title>Zaplanuj swój wyjazd!</title>
+
+
+</head>
+
+<body id="page-top" class="index">
+
+<!-- Menu nawigacyjne -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand" href="#page-top">Znajdź pokój dla siebie, lub dla innych!</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="page-scroll">
+                    <a href="#register">Rejestracja</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#login">Logowanie</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#about">O nas</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#contact">Kontakt</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Nagłówek -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-text">
+                    <span class="name">Dołącz do nas i szukaj pokoju z nami, lub sam udostępniaj nocleg!</span>
+                    <hr class="star-light">
+                    <span class="skills">Dzięki tej stronie będziesz mógł w przyjemny sposób zaplanować swój nocleg, lub może to właśnie Ty pomożesz komuś go znaleźć!</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--  Rejestracja -->
+<section id="register">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Rejestracja</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="container">
+            <form role="form">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input class="form-control" type="text" id="email" placeholder="Adres e-mail" />
+                            <label for="password">Password</label>
+                            <input class="form-control" type="password" id="password" placeholder="Hasło" />
+
+                            <button type="button" class="btn btn-default" onclick="registerUser()"> Zarejestruj! </button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- Logowanie -->
+<section class="colorSuccess" id="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Logowanie</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="container">
+            <form role="form">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="form-group">
+                            <label for="emailLogin">Email</label>
+                            <input class="form-control" type="text" id="emailLogin" placeholder="Podaj adres e-mail" />
+                            <label for="passwordLogin">Password</label>
+                            <input class="form-control" type="password" id="passwordLogin" placeholder="Podaj hasło" />
+
+                            <button type="button" class="btn btn-default" onclick=" logowanie()"> Zaloguj </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- O nas -->
+<section id="about">
+    <div class="container">
+        <div class="col-lg-12 text-center">
+            <h2>O nas</h2>
+            <hr class="star-primary">
+        </div>
+        <span>Miliony użytkowników zaufało właśnie nam! Istniejemy na rynku od 2005 roku.
+            Tutaj jakiś dalszy opis, do zrobienia w przyszłości. lorem ipsum akjdakhsdashd sadasd sad asd asdasdasda sds</span>
+    </div>
+</section>
+
+<!-- Kontakt -->
+<section class="colorSuccess" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Kontakt</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="form-group">
+                    <label for="myEmail">Email:</label>
+                    <textarea class="form-control" rows="1" id="myEmail" placeholder="Email"></textarea>
+
+                    <label for="myTitle">Tytuł:</label>
+                    <textarea class="form-control" rows="1" id="myTitle" placeholder="Tytuł"></textarea>
+
+                    <label for="myText">Wiadomość:</label>
+                    <textarea class="form-control" rows="5" id="myText" placeholder="Wiadomość"></textarea>
+                </div>
+
+                <button class="btn btn-default" onclick="sendMail(); return false">Wyślij</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stopka -->
+<footer class="text-center">
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; Joanna Szczęch, 2016
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_fXolbFIyRtphkqinzTUnauN0ow_pGOA"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script type="text/javascript" src="dependencies/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script type="text/javascript" src="js/initializeFirebase.js"></script>
+<script type="text/javascript" src="js/register.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/authorizer.js"></script>
+<script type="text/javascript" src="js/travelsDetails.js"></script>
+
+</body>
+
+</html>

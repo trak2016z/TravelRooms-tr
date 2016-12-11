@@ -1,0 +1,76 @@
+
+body {
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+header {
+    text-align: center;
+    background: #18BC9C;
+    color: white;
+}
+header .container {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+
+@media (min-width: 768px) {
+    header .container {
+        padding-top: 200px;
+        padding-bottom: 100px;
+    }
+    header .intro-text .name {
+        font-size: 4.75em;
+    }
+    header .intro-text .skills {
+        font-size: 1.75em;
+    }
+}
+section {
+    padding: 100px 0;
+}
+section h2 {
+    margin: 0;
+    font-size: 3em;
+}
+section.colorSuccess {
+    background: lightgrey;
+    color: black;
+}
+section.success {
+    background: #18BC9C;
+    color: white;
+}
+@media (max-width: 767px) {
+    section {
+        padding: 75px 0;
+    }
+    section.first {
+        padding-top: 75px;
+    }
+}
+footer {
+    color: white;
+}
+footer h3 {
+    margin-bottom: 30px;
+}
+
+footer .footer-below {
+    padding: 25px 0;
+    background-color: #233140;
+}
+#map {
+    width: 100%;
+    height: 400px;
+}
+.form-control {
+    margin-bottom: 10px;
+}
