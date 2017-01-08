@@ -6,14 +6,15 @@
     <link rel="stylesheet" type="text/css" href="dependencies/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <title>Twoje noclegi</title>
+    <title>All rooms</title>
 </head>
 <body>
 
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
     <div class="container">
         <div class="navbar-header page-scroll">
-            <a class="navbar-brand" href="#page-top">Twoje noclegi</a>
+            <a class="navbar-brand" href="#page-top">Dostępne pokoje</a>
+            <a class="navbar-brand" href="travels.html">Twoje noclegi</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -31,20 +32,7 @@
     <div class="container">
         <form role="form">
             <div class="form-group">
-                <input type="text" class="form-control" id="placeTravel" placeholder="Wpisz miejsce i naciśnij ENTER"
-                       onkeypress="return saveToList(event)"/>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Miejsce</th>
-                        <th>Szczegóły</th>
-                        <th>Usuń</th>
-                    </tr>
-                    </thead>
-                    <tbody id="travelsBody">
 
-                    </tbody>
-                </table>
             </div>
         </form>
     </div>
@@ -63,6 +51,7 @@
 </footer>
 
 <script type="text/javascript" src="js/firebase.js"></script>
+<!--<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>-->
 <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
 <script type="text/javascript" src="js/initializeFirebase.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
