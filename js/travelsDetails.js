@@ -24,6 +24,21 @@ function saveToExpensess() {
 
 }
 
+function saveToInformation(){
+    var information = document.getElementById('informationForRoom').value.trim();
+    if (information.length > 0 ) {
+        var key = getQueryVariable("id");
+        var endPoint = buildEndPoint(key, "informationForRoom");
+        endPoint.push({name: information})
+    }
+    else {
+        window.alert("Wprowadzono niepoprawną wartość!");
+    }
+
+
+}
+
+
 function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split('&');
@@ -50,6 +65,7 @@ function refreshUI(list) {
 
     document.getElementById('expensesBody').innerHTML = lis;
     document.getElementById('sumExpenses').innerHTML = sum + " zł";
+
 }
 
 var key = getQueryVariable("id");
@@ -86,6 +102,20 @@ buildEndPoint(key, "expenses").on("value", function (snapshot) {
         }
     }
     refreshUI(list);
+});
+
+buildEndPoint(key, "informationForRoom").on("value", function(snapshot){
+    debugger;
+    var data = snapshot.val();
+    for(var key in data) {
+        if(data.hasOwnProperty(key)) {
+            var name = data[key].name ? data[key].name: '';
+            if(name.trim().length > 0){
+                console.log(name);
+            }
+        }
+    }
+    document.getElementById('informationDisplay').innerHTML = name;
 });
 
 buildEndPoint(key).on("value", function (snapshot) {

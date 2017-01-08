@@ -39,8 +39,6 @@
                     </li>
                     <li role="presentation"><a href="#information-tab" aria-controls="information-tab" role="tab"
                                                data-toggle="tab">Informacje ogólne</a></li>
-                    <li role="presentation"><a href="#date-tab" aria-controls="date-tab" role="tab"
-                                               data-toggle="tab">Data</a></li>
                     <li role="presentation"><a href="#expenses-tab" aria-controls="expenses-tab" role="tab"
                                                data-toggle="tab">Dodatkowe opcje</a></li>
                     <li role="presentation"><a href="#country-tab" aria-controls="country-tab" role="tab"
@@ -54,9 +52,6 @@
 
                 </div>
                 <div class="tab-pane" id="information-tab">
-                    FORMULARZ DO ZROBIENIA
-                </div>
-                <div class="tab-pane" id="date-tab">
                     <div>
                         <div class="col-sm-6">
                             <div class="thumbnail">
@@ -86,7 +81,14 @@
                             Do: <b id="data_to" \n> </b>
                         </div>
                     </div>
+
+                <input class="form-control" id="informationForRoom" type="text" placeholder="Informacje ogólne"/>
+                <button type="button" class="btn btn-default" id="buttonInformation" name="button"
+                        onclick="saveToInformation()">Dodaj informacje</button>
+
+                    <p id="informationDisplay"></p>
                 </div>
+
                 <div class="tab-pane" id="expenses-tab">
                     <form role="form">
                         <div class="form-group">
