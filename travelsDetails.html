@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Title</title>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="dependencies/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/informationForRoom.css">
 
 </head>
 <body>
@@ -56,7 +57,7 @@
                         <div class="col-sm-6">
                             <div class="thumbnail">
                                 <div class="form-group">
-                                    <font size="5">Data początkowa:</font>
+                                    <font size="3">Data początkowa:</font>
                                     <input type="text" class="form-control" id="datepicker_from">
                                 </div>
                             </div>
@@ -65,14 +66,20 @@
                         <div class="col-sm-6">
                             <div class="thumbnail">
                                 <div class="form-group">
-                                    <font size="5">Data końcowa:</font>
+                                    <font size="3">Data końcowa:</font>
                                     <input type="text" class="form-control" id="datepicker_to">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <button type="button" class="btn btn-default" onclick="saveDate()"> Zapisz</button>
-                    <div>
+
+
+                <textarea class="form-control" id="informationForRoom" type="text" placeholder="Informacje ogólne"></textarea>
+                <button type="button" class="btn btn-default" id="buttonInformation" name="button"
+                        onclick="saveToInformation()">Dodaj informacje</button>
+                    <hr>
+                    <div class="displayData">
                         Termin:
                         <div>
                             Od: <b id="data_from" \n> </b>
@@ -81,12 +88,8 @@
                             Do: <b id="data_to" \n> </b>
                         </div>
                     </div>
-
-                <input class="form-control" id="informationForRoom" type="text" placeholder="Informacje ogólne"/>
-                <button type="button" class="btn btn-default" id="buttonInformation" name="button"
-                        onclick="saveToInformation()">Dodaj informacje</button>
-
                     <p id="informationDisplay"></p>
+
                 </div>
 
                 <div class="tab-pane" id="expenses-tab">

@@ -2,7 +2,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         document.getElementById('userAccount').innerHTML = getUserName(user);
     }
-    else if (window.location.pathname !== "/Blog-master/Blog-master/homePage.html") {
+    else if (window.location.pathname !== "/TravelRooms/homePage.html") {
         window.location.assign("homePage.html");
     }
 });

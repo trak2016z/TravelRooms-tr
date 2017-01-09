@@ -5,7 +5,7 @@ function logowanie(){
 
     firebase.auth().signInWithEmailAndPassword(email, password)
          .then(function() {
-             window.location = 'travels.html';
+             window.location = 'allRoomsPage.html';
          })
          .catch(function(error){
              window.alert(error.code);

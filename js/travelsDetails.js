@@ -5,8 +5,6 @@ function saveDate() {
     var key = getQueryVariable("id");
     var endPoint = buildEndPoint(key);
     endPoint.update({data_from: from.valueOf(), data_to: to.valueOf()})
-
-
 }
 
 function saveToExpensess() {
@@ -21,12 +19,11 @@ function saveToExpensess() {
     else {
         window.alert("Wprowadzono niepoprawną wartość!");
     }
-
 }
 
-function saveToInformation(){
+function saveToInformation() {
     var information = document.getElementById('informationForRoom').value.trim();
-    if (information.length > 0 ) {
+    if (information.length > 0) {
         var key = getQueryVariable("id");
         var endPoint = buildEndPoint(key, "informationForRoom");
         endPoint.push({name: information})
@@ -34,10 +31,7 @@ function saveToInformation(){
     else {
         window.alert("Wprowadzono niepoprawną wartość!");
     }
-
-
 }
-
 
 function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
@@ -56,13 +50,11 @@ function refreshUI(list) {
     var sum = list.reduce(function (pv, cv) {
         return pv + parseFloat(cv.price);
     }, 0);
-
     for (var i = 0; i < list.length; i++) {
         lis += '<tr data-key="' + list[i].key + '"><td>' + list[i].name + '</td>' +
             '<td>' + list[i].price + '</td>' +
             '<td>' + genLinks(list[i].key, list[i].name, list[i].price) + '</td></tr>';
     }
-
     document.getElementById('expensesBody').innerHTML = lis;
     document.getElementById('sumExpenses').innerHTML = sum + " zł";
 
@@ -75,7 +67,6 @@ function genLinks(key, expenses, price) {
     links += '<a href="javascript:del(\'' + key + '\',\'' + expenses + '\',\'' + price + '\')">Usuń</a>';
     return links;
 }
-
 
 function del(expensesKey, expenses, price) {
     var response = confirm("Na pewno usunąć\"" + expenses + "\" oraz \"" + price + "\"z listy?");
@@ -104,19 +95,20 @@ buildEndPoint(key, "expenses").on("value", function (snapshot) {
     refreshUI(list);
 });
 
-buildEndPoint(key, "informationForRoom").on("value", function(snapshot){
-    debugger;
+buildEndPoint(key, "informationForRoom").on("value", function (snapshot) {
     var data = snapshot.val();
-    for(var key in data) {
-        if(data.hasOwnProperty(key)) {
-            var name = data[key].name ? data[key].name: '';
-            if(name.trim().length > 0){
+    for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+            var name = data[key].name ? data[key].name : '';
+            if (name.trim().length > 0) {
                 console.log(name);
             }
         }
     }
     document.getElementById('informationDisplay').innerHTML = name;
+
 });
+
 
 buildEndPoint(key).on("value", function (snapshot) {
     var data = snapshot.val();
@@ -131,6 +123,8 @@ function fillDate(data_from, data_to) {
     document.getElementById('data_from').innerHTML = data_from.toLocaleDateString();
     document.getElementById('data_to').innerHTML = data_to.toLocaleDateString();
 }
+
+
 
 function buildEndPoint(key, prop) {
     return new Firebase('https://blog-dbcf4.firebaseio.com/' + key + (prop ? '/' + prop : ''));

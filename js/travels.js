@@ -1,6 +1,5 @@
 var favTravel = new Firebase('https://blog-dbcf4.firebaseio.com/');
 
-
 function saveToList(event) {
     if (event.which == 13 || event.keyCode == 13) {
         var placeTravel = document.getElementById('placeTravel').value.trim();
@@ -19,18 +18,27 @@ function saveToFB(placeTravel) {
     });
 }
 
+function showListAllRooms(list) {
+    var lis = '';
+    for (var i = 0; i < list.length; i++) {
+        lis += '<tr data-key="' + list[i].key + '"><td>' + list[i].name + '</td>' +
+            '<td>' + genLinks(list[i].key, list[i].name) + '</td></tr>';
+    }
+    document.getElementById('allRooms').innerHTML = lis;
+}
+
 function refreshUI(list) {
     var lis = '';
     for (var i = 0; i < list.length; i++) {
         lis += '<tr data-key="' + list[i].key + '"><td>' + list[i].name + '</td>' +
             '<td>' + genLinks(list[i].key, list[i].name) + '</td>' +
             '<td>' + genLinks2(list[i].key, list[i].name) + '</td></tr>';
-
     }
-
     document.getElementById('travelsBody').innerHTML = lis;
-
 }
+
+
+
 function genLinks2(key, travel) {
     var links = '';
     links += '<button type="text" onclick="javascript:del(\'' + key + '\',\'' + travel + '\')">Usuń</button>'; //zamienic i wywolac nie linkami a przyciskami
@@ -69,6 +77,23 @@ favTravel.on("value", function (snapshot) {
             }
         }
     }
-    refreshUI(list); //
+    refreshUI(list);
+});
+
+favTravel.on("value", function (snapshot) {
+    var data = snapshot.val();
+    var list = [];
+    for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+            name = data[key].name ? data[key].name : '';
+            if (name.trim().length > 0) {
+                list.push({
+                    name: name,
+                    key: key
+                })
+            }
+        }
+    }
+    showListAllRooms(list);
 });
 
