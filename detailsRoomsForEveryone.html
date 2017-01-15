@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8">
+    <title>Title</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="dependencies/bootstrap/css/bootstrap.min.css">
@@ -10,7 +10,6 @@
     <link rel="stylesheet" type="text/css" href="css/informationForRoom.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrapChangeStyles.css">
 
-    <title>All rooms</title>
 </head>
 <body>
 
@@ -36,14 +35,28 @@
     <div class="container">
         <form role="form">
             <div class="form-group">
-                <div>
-                    <p>Sprawdź terminy:</p>
+
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#map-tab" aria-controls="map-tab" role="tab"
+                                                              data-toggle="tab">Mapa</a>
+                    </li>
+                    <li role="presentation"><a href="#information-tab" aria-controls="information-tab" role="tab"
+                                               data-toggle="tab">Informacje ogólne</a></li>
+                    <li role="presentation"><a href="#expenses-tab" aria-controls="expenses-tab" role="tab"
+                                               data-toggle="tab">Dodatkowe opcje</a></li>
+                </ul>
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="map-tab">
+                    <div id="map"></div>
+
+                </div>
+                <div class="tab-pane" id="information-tab">
                     <div>
                         <div class="col-sm-6">
                             <div class="thumbnail">
                                 <div class="form-group">
-                                    <font size="3">Data początkowa:</font>
-                                    <input type="text" class="form-control" id="datepicker_from">
                                 </div>
                             </div>
                         </div>
@@ -51,42 +64,64 @@
                         <div class="col-sm-6">
                             <div class="thumbnail">
                                 <div class="form-group">
-                                    <font size="3">Data końcowa:</font>
-                                    <input type="text" class="form-control" id="datepicker_to">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-default" onclick="saveDate()"> Zapisz</button>
-                </div>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Miejsce</th>
-                        <th>Szczegóły</th>
-                    </tr>
-                    </thead>
-                    <tbody id="allRooms">
+                    <hr>
+                    <div class="displayData">
+                        Termin:
+                        <div>
+                            Od: <b id="data_from" \n> </b>
+                        </div>
+                        <div>
+                            Do: <b id="data_to" \n> </b>
+                        </div>
+                    </div>
+                    <p id="informationDisplay"></p>
 
-                    </tbody>
-                </table>
+                </div>
+
+                <div class="tab-pane" id="expenses-tab">
+                    <form role="form">
+                        <div class="form-group">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Wymagane do zapłaty</th>
+                                    <th>Cena</th>
+                                </tr>
+                                </thead>
+                                <tbody id="expensesForEveryone">
+
+                                </tbody>
+                                <td><b>Suma:</b></td>
+                                <td><b id="sumExpenses"></b></td>
+                            </table>
+
+                        </div>
+                    </form>
+                </div>
             </div>
+
         </form>
+
     </div>
+
 </section>
-<!-- Stopka -->
+
 <footer class="text-center">
     <div class="footer-below">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    Copyright &copy; Joanna Szczęch 2016
+                    Copyright &copy; Joanna Szczęch, 2016
                 </div>
             </div>
         </div>
     </div>
 </footer>
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_fXolbFIyRtphkqinzTUnauN0ow_pGOA"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <script type="text/javascript" src="dependencies/bootstrap/js/bootstrap.min.js"></script>
@@ -97,7 +132,6 @@
 <script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript" src="js/authorizer.js"></script>
 <script type="text/javascript" src="js/travelsDetails.js"></script>
-<script type="text/javascript" src="js/travels.js"></script>
-<script type="text/javascript" src="js/loginOut.js"></script>
+<script type="text/javascript" src="js/detailsRoomsForEveryone.js"></script>
 </body>
 </html>

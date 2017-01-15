@@ -22,7 +22,7 @@ function showListAllRooms(list) {
     var lis = '';
     for (var i = 0; i < list.length; i++) {
         lis += '<tr data-key="' + list[i].key + '"><td>' + list[i].name + '</td>' +
-            '<td>' + genLinks(list[i].key, list[i].name) + '</td></tr>';
+            '<td>' + genLinksRooms(list[i].key, list[i].name) + '</td></tr>';
     }
     document.getElementById('allRooms').innerHTML = lis;
 }
@@ -37,7 +37,11 @@ function refreshUI(list) {
     document.getElementById('travelsBody').innerHTML = lis;
 }
 
-
+function genLinksRooms(key) {
+    var links = '';
+    links += '<button type="button" onclick="window.location.href=\'detailsRoomsForEvery.html?id=' + key + '\'">Szczegóły</button>';
+    return links;
+}
 
 function genLinks2(key, travel) {
     var links = '';

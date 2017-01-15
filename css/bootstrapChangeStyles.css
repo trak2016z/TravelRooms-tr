@@ -1,0 +1,15 @@
+/* navbar */
+.navbar-default {
+    background-color: darkorange;
+    border-color: whitesmoke;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+

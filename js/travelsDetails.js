@@ -45,6 +45,8 @@ function getQueryVariable(variable) {
     console.log('Query variable %s not found', variable);
 }
 
+
+
 function refreshUI(list) {
     var lis = '';
     var sum = list.reduce(function (pv, cv) {
@@ -57,7 +59,6 @@ function refreshUI(list) {
     }
     document.getElementById('expensesBody').innerHTML = lis;
     document.getElementById('sumExpenses').innerHTML = sum + " zł";
-
 }
 
 var key = getQueryVariable("id");
@@ -93,7 +94,9 @@ buildEndPoint(key, "expenses").on("value", function (snapshot) {
         }
     }
     refreshUI(list);
+
 });
+
 
 buildEndPoint(key, "informationForRoom").on("value", function (snapshot) {
     var data = snapshot.val();
