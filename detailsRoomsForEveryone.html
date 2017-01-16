@@ -44,6 +44,8 @@
                                                data-toggle="tab">Informacje ogólne</a></li>
                     <li role="presentation"><a href="#expenses-tab" aria-controls="expenses-tab" role="tab"
                                                data-toggle="tab">Dodatkowe opcje</a></li>
+                    <li role="presentation"><a href="#reservation-tab" aria-controls="reservation-tab" role="tab"
+                                               data-toggle="tab">Kontakt w celu rezerwacji</a></li>
                 </ul>
             </div>
 
@@ -102,7 +104,30 @@
                         </div>
                     </form>
                 </div>
+
+                <div class="tab-pane" id="reservation-tab">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="form-group">
+                                <label for="myEmail">Email odbiorcy:</label>
+                                <textarea class="form-control" rows="1" id="authorEmail" placeholder="Email"></textarea>
+
+                                <label for="myText">Twój email:</label>
+                                <textarea class="form-control" rows="1" id="myEmail" placeholder="Wiadomość"></textarea>
+
+                                <label for="myTitle">Tytuł:</label>
+                                <textarea class="form-control" rows="1" id="myTitle" placeholder="Tytuł"></textarea>
+
+                                <label for="myText">Wiadomość:</label>
+                                <textarea class="form-control" rows="5" id="myText" placeholder="Wiadomość"></textarea>
+                            </div>
+                            <button class="btn btn-default" onclick="sendMail(); return false">Wyślij</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
 
         </form>
 
@@ -133,5 +158,6 @@
 <script type="text/javascript" src="js/authorizer.js"></script>
 <script type="text/javascript" src="js/travelsDetails.js"></script>
 <script type="text/javascript" src="js/detailsRoomsForEveryone.js"></script>
+<script type="text/javascript" src="js/sendEmail.js"></script>
 </body>
 </html>

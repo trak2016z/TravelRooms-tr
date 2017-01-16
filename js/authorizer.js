@@ -8,6 +8,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 function getUserName(user){
+
     if(user.displayName != null && user.displayName != "" && user.displayName != undefined){
         return user.displayName;
     }

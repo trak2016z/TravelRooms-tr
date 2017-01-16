@@ -39,7 +39,7 @@ function refreshUI(list) {
 
 function genLinksRooms(key) {
     var links = '';
-    links += '<button type="button" onclick="window.location.href=\'detailsRoomsForEvery.html?id=' + key + '\'">Szczegóły</button>';
+    links += '<button type="button" onclick="window.location.href=\'detailsRoomsForEveryone.html?id=' + key + '\'">Szczegóły</button>';
     return links;
 }
 

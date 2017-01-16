@@ -1,5 +1,5 @@
 function buildEndPoint(userID) {
-    return new Firebase('https://blog-dbcf4.firebaseio.com/User/' + (userID));
+    return new Firebase('https://blog-dbcf4.firebaseio.com/User/' + userID);
 }
 
 function saveUserData() {
@@ -19,10 +19,11 @@ function saveUserData() {
             street: street,
             numberHome: numberHome,
             city: city
-        })
+        });
     }
     else {
         window.alert("Wprowadzono niepoprawną wartość!");
     }
-
 }
+
+
